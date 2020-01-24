@@ -10,7 +10,7 @@ import pickle
 
 
 app = Flask(__name__)
-model_Fuel = pickle.load(open("F://Krish//Simple linear//model_Fuel.pkl", 'rb'))
+model_Fuel = pickle.load(open("model_Fuel.pkl", 'rb'))
 
 @app.route('/')
 def home():

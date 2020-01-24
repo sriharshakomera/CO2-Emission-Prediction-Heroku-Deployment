@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">  
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/CO2 Emission.css') }}">
+<link href="css/CO2 Emission.css" rel="stylesheet">
+</head>
+
+<body>   
+
+<div class="login">
+  <div class="login-header">
+    <h1>CO2 Emission Prediction</h1>
+  </div>
+  <div class="login-form">
+    <form action="{{ url_for('predict')}}"method="post">
+		<h3>CYLINDERS:</h3>
+		<input type="text" name="CYLINDERS" placeholder="CYLINDERS" required="required" />
+		<h3>ENGINESIZE:</h3>
+		<input type="text" name="ENGINESIZE" placeholder="ENGINESIZE" required="required" />
+		<h3>FUELCONSUMPTION_HWY:</h3>
+		<input type="text" name="FUELCONSUMPTION_HWY" placeholder="FUELCONSUMPTION_HWY" required="required" />
+		<h3>FUELCONSUMPTION_COMB:</h3>
+		<input type="text" name="FUELCONSUMPTION_COMB" placeholder="FUELCONSUMPTION_COMB" required="required" />
+		<h3>FUELCONSUMPTION_CITY:</h3>
+		<input type="text" name="FUELCONSUMPTION_CITY" placeholder="FUELCONSUMPTION_CITY" required="required" />
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	</form>
+   <br>
+	{{ prediction_text }}
+   </div>
+</div>
+</body>
+</html>
